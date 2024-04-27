@@ -1,0 +1,15 @@
+table.list thead th {
+    background-color: #5d5d5d;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-align: left;
+}
+
+table.list tbody tr td {
+    padding: 5px 10px;
+}
+
+table.list tbody tr:nth-child(even) {
+    background: #eeeeee;
+}

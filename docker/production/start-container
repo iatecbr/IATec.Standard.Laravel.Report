@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+echo "Deleting storage symlink"
+rm -rf /var/www/html/public/storage
+
+echo "Redoing storage symlink"
+php artisan storage:link
+
+#echo "Running database migrations"
+#php artisan migrate --seed --force
+
+exec apache2-foreground

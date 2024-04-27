@@ -1,0 +1,93 @@
+@page {
+    margin: 0.0cm 0.0cm 0.0cm 0.0cm;
+}
+
+.page {
+    page-break-before: always;
+}
+
+.page:first-child {
+    page-break-before: initial;
+}
+
+body {
+    font-size: 12px;
+    margin-top: 90px;
+    font-family: sans-serif, "Open Sans";
+}
+
+table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+hr.break {
+    page-break-before: always;
+    border: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 0.80cm;
+    padding-right: 0.80cm;
+}
+
+header table.header {
+    width: 100%;
+    display: table;
+}
+
+header table.header tr:first-child td {
+    border-bottom: 2px solid #A1A5B7;
+    opacity: 1;
+}
+
+header table.header td {
+    height: 90px;
+}
+
+
+header table.header td.logo {
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+header table.header td.logo img {
+    height: 60px;
+}
+
+header table.header td.titles {
+    vertical-align: middle;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+header table.header td.file-info {
+    width: 100px;
+}
+
+main {
+    padding-left: 0.80cm;
+    padding-right: 0.80cm;
+}
+
+footer {
+    position: fixed;
+
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    height: 0;
+}
+
+footer div {
+    background-color: #F8F8F8;
+    height: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}

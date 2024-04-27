@@ -1,0 +1,34 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+    include:
+      - main
+      - Hotfix/*
+      - Release/*
+
+pool:
+  name: IATec-Builds-Agents-Linux
+
+steps:
+  - task: Docker@2
+    displayName: Build And Push Docker Image
+    inputs:
+      containerRegistry: 'Vertical xxxx - Azure Registry'
+      repository: 'xxx/xxxx/reports'
+      command: 'buildAndPush'
+      Dockerfile: 'Dockerfile'
+      tags: |
+        $(Build.BuildId)
+        latest
+      addPipelineData: false
+      addBaseImageData: false
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'secrets.yml'
+      ArtifactName: 'k8s secrets'
+      publishLocation: 'Container'
