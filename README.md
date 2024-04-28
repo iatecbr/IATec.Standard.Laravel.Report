@@ -99,7 +99,7 @@ php -v
 
 ## Executando o Projeto
 
-Para Rodar o projeto, no teminal, vocë deve estar na pasta 7You.Team.Reports e instalar as dependências do projeto com o comando:
+Para Rodar o projeto, no teminal, vocë deve estar na raiz da pasta e instalar as dependências do projeto com o comando:
 
 #### Windows
 
@@ -113,10 +113,10 @@ src/composer.phar install
 src/composer.phar install
 ```
 
-Após a instalação das dependências, você deve executar o comando pelo terminal do projeto 7You.Virtualization:
+Após a instalação das dependências, você deve executar o comando pelo terminal do projeto na pasta src:
 
 ```bash
-docker-compose -f 7you/docker-compose.team.reports.yml up -d --build
+php artisan serve
 ```
 
 ## Debugando o Projeto
@@ -155,6 +155,7 @@ Para debugar o projeto, no visual studio code, você deve instalar a extensão P
     ]
 }
 ```
+lembre-se de instalar a extensão PHP Debug, para mais detalhes acesse o link: [PHP XDebug](https://xdebug.org/docs/install)
 
 ## Extenões ulteis
 
