@@ -12,35 +12,13 @@ class ExampleService extends ServiceBase
     public function __construct()
     {
         parent::__construct();
-        //$this->url = env("INTERNAL_URL_PROJECT_API");
-        //$this->path = '/example';
+        $this->url = env("FAKE_API_URL");
+        $this->path = '/users';
     }
 
-    public function get(int $id): array
+    public function get(): array
     {
-        // $response = $this->client->get( $this->url. "$this->path/path/$id");
-        // $response->json()['data']
-        return [
-            [
-                'id' => 1,
-                'name' => 'Examples 1',
-                'age' => 20
-            ],
-            [
-                'id' => 2,
-                'name' => 'Examples 2',
-                'age' => 30
-            ],
-            [
-                'id' => 3,
-                'name' => 'Examples 3',
-                'age' => 40
-            ],
-            [
-                'id' => 4,
-                'name' => 'Examples 4',
-                'age' => 50
-            ]
-        ];
+         $response = $this->client->get( $this->url. "$this->path");
+         return $response->json();
     }
 }

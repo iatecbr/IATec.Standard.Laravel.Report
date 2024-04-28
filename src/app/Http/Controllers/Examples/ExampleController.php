@@ -16,10 +16,10 @@ class ExampleController extends Controller
         $this->service = new ExampleService();
     }
 
-    public function build(int $id): Response
+    public function build(): Response
     {
         $report = Pdf::loadView('modules/examples/example', [
-            'data' => $this->service->get($id)
+            'data' => $this->service->get()
         ]);
 
         return $report->stream('example.pdf');

@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/examples')->group(function () {
-    Route::get('/example/{id}', [ExampleController::class, 'build']);
+    Route::get('/default', [ExampleController::class, 'build']);
 });

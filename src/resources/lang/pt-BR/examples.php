@@ -5,8 +5,10 @@ return [
         'title' => 'Titulo de exemplo',
         'list' => [
             'title' => [
+                'id' => 'ID',
                 'name' => 'Nome',
-                'age' => 'Idade'
+                'email' => 'E-mail',
+                'address' => 'Endereço',
             ],
         ],
     ]

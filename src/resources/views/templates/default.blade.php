@@ -33,7 +33,7 @@
     <div>
         <script type="text/php">
             $textPages = '{PAGE_NUM}/{PAGE_COUNT}';
-            $textGenerated = 'Downloaded By 7You';
+            $textGenerated =  __('general.footer.title');
 
             $size = 11;
             $font = $fontMetrics->getFont('Open Sans','Light');

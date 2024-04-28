@@ -12,7 +12,7 @@ abstract class ServiceBase
     public function __construct()
     {
         $this->client = Http::withHeaders([
-            "Custom-7You-Authorization" => env('SA_LOGIN_UID')
+            //"Authorization" => env('Token')
         ]);
     }
 }
