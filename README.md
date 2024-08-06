@@ -37,7 +37,7 @@
 #### Passo 5: Testar a Instalação
 
 1. Abra o Prompt de Comando.
-2. Exceute o comando abaixo. Isso deve mostrar a versão do PHP que você instalou, indicando que o PHP foi instalado corretamente.
+2. Exeute o comando abaixo. Isso deve mostrar a versão do PHP que você instalou, indicando que o PHP foi instalado corretamente.
 
 ```powershell
 php -v
@@ -72,7 +72,7 @@ php -v
 
 #### Windows
 
-1. faça a instalação do composer baixando o instador pelo link *<https://getcomposer.org/download/>*.
+1. faça a instalação do composer baixando o instalador pelo link *<https://getcomposer.org/download/>*.
 
 ### Linux / macOS
 
@@ -102,7 +102,7 @@ php -v
 
 ## Executando o Projeto
 
-Para Rodar o projeto, no teminal, vocë deve estar da pasta src e instalar as dependências do projeto com o comando:
+Para executar o projeto, no terminal, você deve estar da pasta src e instalar as dependências do projeto com o comando:
 
 ```bash
 composer install
@@ -181,7 +181,7 @@ Algumas configurações pode ser feitas atraves no icone de engrenagem perto do 
 ```
 lembre-se de instalar a extensão PHP Debug, para mais detalhes acesse o link: [PHP XDebug](https://xdebug.org/docs/install)
 
-## Extenões ulteis
+## Extensões úteis
 
 para um melhor desenvolvimento, recomenda-se as instalações da extensão
 
