@@ -131,7 +131,11 @@ execute o projeto pela url e copie o conteúdo da página e cole no site do xdeb
 reinicie o servidor
 
 ### Configurando o Visual Studio Code
-Para debugar o projeto, no visual studio code, você deve instalar a extensão `PHP Debug` e configurar o arquivo launch.json na pasta .vscode conforme abaixo:
+Para debugar o projeto, no visual studio code, você deve instalar a extensão `PHP Debug`;
+
+#### Configurando o `PHP Debug`
+Acesse a extensão e siga a inidicações para funcionamento.
+Algumas configurações pode ser feitas atraves no icone de engrenagem perto do icone da extensão, após configure o arquivo `launch.json` conforme abaixo:
 
 #### Debugando com artisan serve
 ```json
