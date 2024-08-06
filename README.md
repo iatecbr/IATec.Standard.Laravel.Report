@@ -6,7 +6,7 @@
 >
 > **Composer 2.6.5**
 
-## Instalando o PHP 8.2.12
+## Instalando o PHP 8.2
 
 ### Windows
 
@@ -43,6 +43,9 @@
 php -v
 ```
 
+#### Passo 6: Habilitar fileinfo
+Para habilitar o fileinfo, você deve editar o arquivo php.ini, para isso e descomentar a linha `;extension=fileinfo` e reiniciar o servidor.
+
 ### Mac
 
 #### Passo 1: Instalar o Homebrew
@@ -59,7 +62,7 @@ Se você ainda não tem o Homebrew instalado, abra o Terminal e execute o comand
 brew install php
 ```
 
-#### Passo 3: Verificar a Instalação
+#### Passo 4: Verificar a Instalação
 
 ```bash
 php -v
@@ -99,18 +102,10 @@ php -v
 
 ## Executando o Projeto
 
-Para Rodar o projeto, no teminal, vocë deve estar na raiz da pasta e instalar as dependências do projeto com o comando:
-
-#### Windows
-
-```powershell
-src/composer.phar install
-```
-
-#### Mac
+Para Rodar o projeto, no teminal, vocë deve estar da pasta src e instalar as dependências do projeto com o comando:
 
 ```bash
-src/composer.phar install
+composer install
 ```
 
 Após a instalação das dependências, você deve executar o comando pelo terminal do projeto na pasta src:
@@ -121,8 +116,41 @@ php artisan serve
 
 ## Debugando o Projeto
 
-Para debugar o projeto, no visual studio code, você deve instalar a extensão PHP Debug e configurar o arquivo launch.json na pasta .vscode conforme abaixo:
+### Instalando o XDebug
+acesse o link [XDebug](https://xdebug.org/wizard).
 
+#### Configurando o phpinfo para verificar a instalação do XDebug
+acesse o arquivo `srxc/public/index.php` e substitua o conteúdo pelo código abaixo (Lembre de voltar o conteúdo original após a verificação)
+
+```php
+<?php
+phpinfo();
+```
+execute o projeto pela url e copie o conteúdo da página e cole no site do xdebu e siga as instruções.
+
+reinicie o servidor
+
+### Configurando o Visual Studio Code
+Para debugar o projeto, no visual studio code, você deve instalar a extensão `PHP Debug` e configurar o arquivo launch.json na pasta .vscode conforme abaixo:
+
+#### Debugando com artisan serve
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9003,
+            "log": true,
+            "ignore": ["**/vendor/**/*.php"]
+        }
+    ]
+}
+```
+
+#### Debugando com docker 
 ```json
 {
     "version": "0.2.0",
@@ -143,14 +171,6 @@ Para debugar o projeto, no visual studio code, você deve instalar a extensão P
                 "max_data": 10000,
                 "show_hidden": 1
             }
-        },
-        {
-            "name": "Launch currently open script",
-            "type": "php",
-            "request": "launch",
-            "program": "${file}",
-            "cwd": "${fileDirname}",
-            "port": 9000
         }
     ]
 }
