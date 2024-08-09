@@ -140,43 +140,43 @@ Algumas configurações pode ser feitas atraves no icone de engrenagem perto do 
 #### Debugando com artisan serve
 ```json
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Listen for XDebug",
-            "type": "php",
-            "request": "launch",
-            "port": 9003,
-            "log": true,
-            "ignore": ["**/vendor/**/*.php"]
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Listen for XDebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9003,
+      "log": true,
+      "ignore": ["**/vendor/**/*.php"]
+    }
+  ]
 }
 ```
 
-#### Debugando com docker 
+#### Debugando com docker
 ```json
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Listen for XDebug",
-            "type": "php",
-            "request": "launch",
-            "hostname": "0.0.0.0",
-            "port": 9003,
-            "log": true,
-            "pathMappings": {
-                "/var/www/html": "${workspaceFolder}/src"
-            },
-            "ignore": ["**/vendor/**/*.php"],
-            "xdebugSettings": {
-                "max_children": 10000,
-                "max_data": 10000,
-                "show_hidden": 1
-            }
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Listen for XDebug",
+      "type": "php",
+      "request": "launch",
+      "hostname": "0.0.0.0",
+      "port": 9003,
+      "log": true,
+      "pathMappings": {
+        "/var/www/html": "${workspaceFolder}/src"
+      },
+      "ignore": ["**/vendor/**/*.php"],
+      "xdebugSettings": {
+        "max_children": 10000,
+        "max_data": 10000,
+        "show_hidden": 1
+      }
+    }
+  ]
 }
 ```
 lembre-se de instalar a extensão PHP Debug, para mais detalhes acesse o link: [PHP XDebug](https://xdebug.org/docs/install)

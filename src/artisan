@@ -19,6 +19,8 @@ require __DIR__.'/vendor/autoload.php';
 
 $app = require_once __DIR__.'/bootstrap/app.php';
 
+$port = env('SERVER_PORT', 8000);
+
 /*
 |--------------------------------------------------------------------------
 | Run The Artisan Application
