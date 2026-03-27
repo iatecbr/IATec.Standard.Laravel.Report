@@ -18,7 +18,7 @@ class ExampleController extends Controller
 
     public function build(): Response
     {
-        $report = Pdf::loadView('modules/examples/example', [
+        $report = Pdf::loadView('modules/Examples/example', [
             'data' => $this->service->get()
         ]);
 
