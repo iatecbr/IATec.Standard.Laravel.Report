@@ -12,7 +12,7 @@
         "barryvdh/laravel-dompdf": "^3.1.2",
         "dompdf/dompdf": "^3.1.6",
         "guzzlehttp/guzzle": "^8.2",
-        "laravel/framework": "^13.31",
+        "laravel/framework": "^13.35",
         "laravel/sanctum": "^4.3.3",
         "laravel/tinker": "^3.0.2"
     },
@@ -20,7 +20,7 @@
         "fakerphp/faker": "^1.24.1",
         "mockery/mockery": "^1.6.15",
         "nunomaduro/collision": "^8.9.5",
-        "phpunit/phpunit": "^12.5.35",
+        "phpunit/phpunit": "^12.5.38",
         "spatie/laravel-ignition": "^2.12.0"
     },
     "autoload": {
