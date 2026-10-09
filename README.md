@@ -2,11 +2,13 @@
 
 ## Pré-requisitos
 
-> **PHP 8.2.12**
+> **PHP 8.3 ou superior** (Docker utiliza PHP 8.3)
 >
-> **Composer 2.6.5**
+> **Composer 2 atualizado**
+>
+> **Node.js 20.19 ou superior** (somente para as dependências npm de desenvolvimento)
 
-## Instalando o PHP 8.2
+## Instalando o PHP 8.3
 
 ### Windows
 
@@ -68,7 +70,7 @@ brew install php
 php -v
 ```
 
-## Instalando o Composer 2.6.5
+## Instalando o Composer 2
 
 #### Windows
 
@@ -113,6 +115,37 @@ Após a instalação das dependências, você deve executar o comando pelo termi
 ```bash
 php artisan serve
 ```
+
+## Dependências e verificações
+
+As dependências PHP são atualizadas para as versões estáveis mais recentes
+compatíveis com PHP 8.3 e com os requisitos dos pacotes. O PHPUnit permanece na
+série 12 para preservar essa compatibilidade. Utilize o Composer atualizado
+instalado no sistema, conforme as instruções acima.
+
+O Laravel Mix, seus loaders e os overrides associados foram removidos: o projeto
+não possui configuração de compilação nem fontes JavaScript/SCSS, e essa cadeia
+incluía dependências com vulnerabilidades sem versão corrigida. Os relatórios
+continuam utilizando diretamente os arquivos CSS em `src/public/css`; não é
+necessário executar `npm run production` ou `npm run watch`.
+
+Na pasta `src`, instale as dependências npm de desenvolvimento com `npm ci`.
+Os arquivos `composer.lock` e `package-lock.json` devem ser versionados para
+reproduzir as versões verificadas.
+
+Após atualizar dependências, execute na pasta `src`:
+
+```bash
+composer validate --strict
+composer check-platform-reqs --lock
+composer audit --locked
+npm audit
+php artisan test
+```
+
+As auditorias incluem dependências de desenvolvimento e transitivas. A ausência
+de alertas se refere às vulnerabilidades conhecidas no momento da consulta;
+repita as verificações regularmente.
 
 ## Debugando o Projeto
 
